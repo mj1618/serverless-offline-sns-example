@@ -1,0 +1,26 @@
+
+service: sns-test
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  pong:
+    handler: handler.pong
+    events:
+      - sns: test-topic
+  ping:
+    handler: handler.ping
+    events:
+      - http:
+          path: ping
+          method: get
+          cors: true
+plugins:
+  - serverless-offline-sns
+  - serverless-offline
+custom:
+  serverless-offline-sns:
+    port: 4002
+    debug: false

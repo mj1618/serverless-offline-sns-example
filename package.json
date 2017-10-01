@@ -1,0 +1,18 @@
+{
+  "name": "serverless-offline-sns-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {
+    "aws-sdk": "^2.125.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.16.0",
+    "serverless-offline-sns": "^0.12.0"
+  },
+  "scripts": {
+    "start": "serverless offline start"
+  },
+  "author": "Matt James <matthew.stephen.james@gmail.com>",
+  "license": "MIT"
+}
