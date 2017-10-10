@@ -18,9 +18,32 @@ functions:
           method: get
           cors: true
 plugins:
+  - serverless-dynamodb-local
   - serverless-offline-sns
   - serverless-offline
 custom:
   serverless-offline-sns:
     port: 4002
     debug: false
+  dynamodb:
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+      seed: true
+
+resources:
+  Resources:
+    usersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: usersTable
+        AttributeDefinitions:
+          - AttributeName: email
+            AttributeType: S
+        KeySchema:
+          - AttributeName: email
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
