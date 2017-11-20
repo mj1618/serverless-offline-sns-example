@@ -18,9 +18,10 @@ functions:
           method: get
           cors: true
 plugins:
-  - serverless-offline-sns
+  - serverless-plugin-typescript
   - serverless-offline
+  - serverless-offline-sns
 custom:
   serverless-offline-sns:
     port: 4002
-    debug: false
+    debug: true 

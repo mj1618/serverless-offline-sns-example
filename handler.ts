@@ -1,7 +1,8 @@
 'use strict';
 var AWS = require("aws-sdk");
 
-module.exports.ping = (event, context, callback) => {
+module.exports.ping = async (event, context, callback) => {
+    await new Promise((resolve, reject) => setTimeout(resolve, 500));
   var sns = new AWS.SNS({
     endpoint: "http://127.0.0.1:4002",
     region: "us-east-1",
@@ -26,5 +27,6 @@ module.exports.ping = (event, context, callback) => {
 
 module.exports.pong = (event, context, callback) => {
   console.log("pong");
+  console.log(context);
   callback(null, {});
 };
