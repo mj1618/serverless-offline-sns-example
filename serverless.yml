@@ -18,7 +18,7 @@ functions:
           method: get
           cors: true
 plugins:
-  - serverless-plugin-typescript
+  - serverless-webpack
   - serverless-offline
   - serverless-offline-sns
 custom:
