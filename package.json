@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "serverless-offline": "^3.16.0",
-    "serverless-offline-sns": "^0.27.0"
+    "serverless-offline-sns": "^0.28.0"
   },
   "scripts": {
     "start": "serverless offline start"

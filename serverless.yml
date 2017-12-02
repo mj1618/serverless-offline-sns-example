@@ -4,7 +4,7 @@ service: sns-test
 provider:
   name: aws
   runtime: nodejs6.10
-
+  region: localhost 
 functions:
   pong:
     handler: handler.pong
