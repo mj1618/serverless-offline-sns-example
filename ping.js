@@ -24,8 +24,3 @@ module.exports.ping = (event, context, callback) => {
   });
 };
 
-module.exports.pong = (event, context, callback) => {
-  console.log("pong");
-  console.log(event.Records[0].Sns.Message);
-  callback(null, {});
-};

@@ -4,15 +4,17 @@ service: sns-test
 provider:
   name: aws
   runtime: nodejs6.10
+  environment:
+    MY_VAR: MY_VAL
 
 functions:
   pong:
-    handler: handler.pong
+    handler: pong.pong
     events:
       - sns:
          topicName: test-topic
   ping:
-    handler: handler.ping
+    handler: ping.ping
     events:
       - http:
           path: ping
