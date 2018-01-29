@@ -3,7 +3,7 @@ var AWS = require("aws-sdk");
 
 module.exports.ping = (event, context, callback) => {
   var sns = new AWS.SNS({
-    endpoint: "http://127.0.0.1:4002",
+    endpoint: "http://127.0.0.1:4575",
     region: "us-east-1",
   });
   sns.publish({
@@ -26,6 +26,6 @@ module.exports.ping = (event, context, callback) => {
 
 module.exports.pong = (event, context, callback) => {
   console.log("pong");
-  console.log(event.Records[0].Sns.Message);
+//   console.log(event.Records[0].Sns.Message);
   callback(null, {});
 };

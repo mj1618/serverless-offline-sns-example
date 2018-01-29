@@ -25,3 +25,5 @@ custom:
   serverless-offline-sns:
     port: 4002
     debug: true 
+    sns-endpoint: http://127.0.0.1:4575
+
