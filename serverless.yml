@@ -9,8 +9,7 @@ functions:
   pong:
     handler: handler.pong
     events:
-      - sns:
-         topicName: test-topic
+      - sns: test-topic
   ping:
     handler: handler.ping
     events:
@@ -24,4 +23,4 @@ plugins:
 custom:
   serverless-offline-sns:
     port: 4002
-    debug: true 
+    debug: true
