@@ -12,20 +12,13 @@ module.exports.ping = (event, context, callback) => {
     TopicArn: "arn:aws:sns:us-east-1:123456789012:test-topic",
   }, () => {
     console.log("ping");
-    const response = {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'Ping sent!',
-        input: event,
-      }),
-    };
-
-    callback(null, response);
+    callback(null, {response: "return from lambda ping"});
   });
 };
 
 module.exports.pong = (event, context, callback) => {
   console.log("pong");
-  console.log(event.Records[0].Sns.Message);
-  callback(null, {});
+  console.log(JSON.stringify(event));
+  // console.log(event.Records[0].Sns.Message);
+  callback(null, {response: "return from lambda pong"});
 };
