@@ -4,7 +4,8 @@
   "description": "",
   "main": "handler.js",
   "dependencies": {
-    "aws-sdk": "^2.942.0"
+    "aws-sdk": "^2.942.0",
+    "serverless": "^2.51.2"
   },
   "devDependencies": {
     "serverless-offline": "^7.0.0",
