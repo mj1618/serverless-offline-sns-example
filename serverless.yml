@@ -7,11 +7,11 @@ provider:
 
 functions:
   pong:
-    handler: handler.pong
+    handler: src/handler.pong
     events:
       - sns: test-topic
   ping:
-    handler: handler.ping
+    handler: src/handler.ping
     events:
       - http:
           path: ping

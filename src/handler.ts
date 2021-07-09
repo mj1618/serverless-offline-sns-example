@@ -1,13 +1,12 @@
-'use strict';
-var AWS = require("aws-sdk");
+const AWS = require("aws-sdk");
 
-module.exports.ping = (event, context, callback) => {
+export const ping = (event, context, callback) => {
   var sns = new AWS.SNS({
     endpoint: "http://127.0.0.1:4002",
     region: "us-east-1",
   });
   sns.publish({
-    Message: "hello!",
+    Message: '{"default": "hello!"}',
     MessageStructure: "json",
     TopicArn: "arn:aws:sns:us-east-1:123456789012:test-topic",
   }, () => {
@@ -24,7 +23,7 @@ module.exports.ping = (event, context, callback) => {
   });
 };
 
-module.exports.pong = (event, context, callback) => {
+export const pong = (event, context, callback) => {
   console.log("pong");
   console.log(context);
   callback(null, {});
