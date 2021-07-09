@@ -1,4 +1,5 @@
-const AWS = require("aws-sdk");
+import AWS from "aws-sdk";
+import {message} from "./message";
 
 export const ping = (event, context, callback) => {
   var sns = new AWS.SNS({
@@ -6,7 +7,7 @@ export const ping = (event, context, callback) => {
     region: "us-east-1",
   });
   sns.publish({
-    Message: '{"default": "hello!"}',
+    Message: JSON.stringify(message),
     MessageStructure: "json",
     TopicArn: "arn:aws:sns:us-east-1:123456789012:test-topic",
   }, () => {
