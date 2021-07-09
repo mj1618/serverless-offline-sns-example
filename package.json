@@ -4,11 +4,11 @@
   "description": "",
   "main": "handler.js",
   "dependencies": {
-    "aws-sdk": "^2.125.0"
+    "aws-sdk": "^2.942.0"
   },
   "devDependencies": {
-    "serverless-offline": "^3.16.0",
-    "serverless-offline-sns": "^0.27.0"
+    "serverless-offline": "^7.0.0",
+    "serverless-offline-sns": "^0.72.0"
   },
   "scripts": {
     "start": "serverless offline start"

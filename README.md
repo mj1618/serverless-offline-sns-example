@@ -2,6 +2,7 @@
 
 Simply run
 ```bash
+npx npm-check-updates -u
 npm install
 npm start
 ```
