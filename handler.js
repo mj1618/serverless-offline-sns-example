@@ -7,8 +7,8 @@ module.exports.ping = (event, context, callback) => {
     region: "us-east-1",
   });
   sns.publish({
-    Message: '{"default": "hello!"}',
-    MessageStructure: "json",
+    Message:'Simple text message',
+    Subject: "just testing",
     TopicArn: "arn:aws:sns:us-east-1:123456789012:test-topic",
   }, () => {
     console.log("ping");

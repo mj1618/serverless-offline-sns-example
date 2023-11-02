@@ -3,7 +3,8 @@ service: sns-test
 
 provider:
   name: aws
-  runtime: nodejs6.10
+  runtime: nodejs18.x
+  timeout: 120
 
 functions:
   pong:
@@ -20,7 +21,15 @@ functions:
 plugins:
   - serverless-offline-sns
   - serverless-offline
+  - serverless-localstack
 custom:
   serverless-offline-sns:
     port: 4002
     debug: true
+  localstack:
+    host: http://127.0.0.1
+    edgePort: 4566 
+    networks: 
+      - serverless-offline-sns-example
+    lambda:
+      mountCode: True
